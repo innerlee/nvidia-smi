@@ -1,7 +1,7 @@
 {
     "name": "nvidia-smi",
     "displayName": "nvidia-smi",
-    "description": "Show nvidia-smi on status bar",
+    "description": "Show GPU usage on status bar",
     "icon": "icon.png",
     "version": "0.0.1",
     "publisher": "innerlee",
