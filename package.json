@@ -1,0 +1,52 @@
+{
+    "name": "nvidia-smi",
+    "displayName": "nvidia-smi",
+    "description": "Show nvidia-smi on status bar",
+    "icon": "icon.png",
+    "version": "0.0.1",
+    "publisher": "innerlee",
+    "license": "MIT",
+    "repository": "https://github.com/innerlee/nvidia-smi",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.nvidia-smi",
+                "title": "Update nvidia-smi"
+            },
+            {
+                "command": "extension.stop_nvidia-smi",
+                "title": "Stop nvidia-smi"
+            },
+            {
+                "command": "extension.start_nvidia-smi",
+                "title": "Start nvidia-smi"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "dependencies": {
+        "child-process-promise": "^2.2.1"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
