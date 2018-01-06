@@ -1,4 +1,4 @@
-# nvidia-smi README
+# nvidia-smi
 
 Shows the GPU usage at status bar.
 
