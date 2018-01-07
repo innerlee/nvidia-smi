@@ -3,7 +3,7 @@ All notable changes to the "nvidia-smi" extension will be documented in this fil
 
 ### 0.0.3
 
-- Support recycle, die, clock style.
+- Support recycle, die, clock, line, pile, digit style.
 
 ### 0.0.2
 
