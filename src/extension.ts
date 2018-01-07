@@ -123,6 +123,7 @@ class NvidiaSmi {
         // Create as needed
         if (!this._statusBarItem) {
             this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left)
+            this._statusBarItem.show()
         }
 
         try {
@@ -140,7 +141,6 @@ class NvidiaSmi {
         // Update the status bar
         this._statusBarItem.text = levelChars.join('')
         this._statusBarItem.tooltip = levels.map((val) => `${val} %`).join('\n')
-        this._statusBarItem.show()
     }
 
     public async stopNvidiaSmi() {
@@ -150,7 +150,6 @@ class NvidiaSmi {
         if (this._statusBarItem) {
             this._statusBarItem.text = ''
             this._statusBarItem.tooltip = ''
-            this._statusBarItem.show()
         }
     }
 

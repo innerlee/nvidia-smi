@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "nvidia-smi" extension will be documented in this file.
 
+### 0.0.5
+
+- Keep position steady.
+
 ### 0.0.4
 
 - Support circledigit, negativecircledigit, wan, tiao, bing style.

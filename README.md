@@ -22,6 +22,10 @@ Shows the GPU usage at status bar.
 
 ## Release Notes
 
+### 0.0.5
+
+- Keep position steady.
+
 ### 0.0.4
 
 - Support circledigit, negativecircledigit, wan, tiao, bing style.
