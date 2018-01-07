@@ -3,7 +3,7 @@
     "displayName": "nvidia-smi",
     "description": "Show GPU usage on status bar",
     "icon": "icon.png",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "innerlee",
     "license": "MIT",
     "repository": "https://github.com/innerlee/nvidia-smi",
@@ -18,6 +18,21 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Nvidia-smi GPU status configuration",
+            "properties": {
+                "nvidia-smi.drawtype": {
+                    "type": "string",
+                    "default": "circle",
+                    "description": "circle | bar",
+                    "enum": [
+                        "circle",
+                        "bar"
+                    ]
+                }
+            }
+        },
         "commands": [
             {
                 "command": "extension.nvidia-smi",

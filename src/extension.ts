@@ -1,9 +1,10 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the necessary extensibility types to use in your code below
-import { window, commands, Disposable, ExtensionContext, StatusBarAlignment, StatusBarItem } from 'vscode'
+import { window, commands, Disposable, ExtensionContext, StatusBarAlignment, StatusBarItem, workspace } from 'vscode'
 import { platform } from 'os'
-const exec = require('child-process-promise').exec;
-const heightChars = ['_', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
+const exec = require('child-process-promise').exec
+const barChars = ['▁', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
+const circChars = ['◌', '◔', '◑', '◕', '◍']
 const cmd = `nvidia-smi -q -d UTILIZATIONnvidia-smi -q -d UTILIZATION | grep Gpu | sed 's/[Gpu%: ]//g'`
 
 // This method is called when your extension is activated. Activation is
@@ -17,7 +18,7 @@ export async function activate(context: ExtensionContext) {
     // create a new word counter
     let nvidiasmi = new NvidiaSmi(0)
     try {
-        var res = await exec(cmd);
+        var res = await exec(cmd)
         var nCard = res.stdout.split('\n').filter((val) => val).length
         if (nCard > 0) {
             nvidiasmi.nCard = nCard
@@ -40,6 +41,10 @@ export async function activate(context: ExtensionContext) {
         nvidiasmi.startNvidiaSmi()
     })
 
+    context.subscriptions.push(workspace.onDidChangeConfiguration(() => {
+        nvidiasmi.updateDrawtype()
+    }))
+
     // Add to a list of disposables which are disposed when this extension is deactivated.
     context.subscriptions.push(nvidiasmi)
     context.subscriptions.push(updateCmd)
@@ -51,22 +56,41 @@ class NvidiaSmi {
 
     private _statusBarItem: StatusBarItem
     private _interval: NodeJS.Timer
-    private _nCard: number;
+    private _nCard: number
+    private _indicator: string[]
 
     constructor(numCard: number) {
-        this.nCard = numCard;
+        this.nCard = numCard
+        this.updateDrawtype()
     }
 
     get nCard(): number {
-        return this._nCard;
+        return this._nCard
     }
 
     set nCard(numCard: number) {
         if (numCard >= 0) {
-            this._nCard = numCard;
+            this._nCard = numCard
         }
         else {
-            console.log("Error: bad value of numCard!");
+            console.log("Error: bad value of numCard!")
+        }
+    }
+
+    get indicator(): string[] {
+        return this._indicator
+    }
+
+    set indicator(ind: string[]) {
+        this._indicator = ind
+    }
+
+    public updateDrawtype() {
+        var drawtype = workspace.getConfiguration('nvidia-smi').drawtype
+        if (drawtype == 'circle') {
+            this.indicator = circChars
+        } else {
+            this.indicator = barChars
         }
     }
 
@@ -80,9 +104,11 @@ class NvidiaSmi {
         }
 
         try {
-            var res = await exec(cmd);
+            var res = await exec(cmd)
             var levels = res.stdout.split('\n').filter((val) => val)
-            var levelChars = levels.map((val) => heightChars[Math.ceil(Number(val) / 100 * 8)])
+            var chars = this.indicator
+            var nlevel = chars.length - 1
+            var levelChars = levels.map((val) => chars[Math.ceil(Number(val) / 100 * nlevel)])
 
         } catch (e) {
             console.log(e)
@@ -111,7 +137,7 @@ class NvidiaSmi {
 
         this._interval = setInterval(() => {
             this.updateNvidiaSmi()
-        }, 1000);
+        }, 1000)
     }
 
     dispose() {
