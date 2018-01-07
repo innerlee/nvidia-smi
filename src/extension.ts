@@ -3,8 +3,24 @@
 import { window, commands, Disposable, ExtensionContext, StatusBarAlignment, StatusBarItem, workspace } from 'vscode'
 import { platform } from 'os'
 const exec = require('child-process-promise').exec
-const barChars = ['▁', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
-const circChars = ['◌', '◔', '◑', '◕', '◍']
+const circleChars = ['◌', '◔', '◑', '◕', '◍']
+const barChars = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
+const recycleChars = ['♺', '♳', '♴', '♵', '♶', '♷', '♸', '♹']
+const dieChars = ['⛶', '⚀', '⚁', '⚂', '⚃', '⚄', '⚅']
+const clockChars = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚']
+const lineChars = [ '⎽', '⎼', '⎻', '⎺']
+const pileChars = ['𝄖', '𝄗', '𝄘', '𝄙', '𝄚', '𝄛']
+const digitChars = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+const drawtypes = {
+    'circle': circleChars,
+    'bar': barChars,
+    'recycle': recycleChars,
+    'die': dieChars,
+    'clock': clockChars,
+    'line': lineChars,
+    'pile': pileChars,
+    'digit': digitChars
+}
 const cmd = `nvidia-smi -q -d UTILIZATIONnvidia-smi -q -d UTILIZATION | grep Gpu | sed 's/[Gpu%: ]//g'`
 
 // This method is called when your extension is activated. Activation is
@@ -87,11 +103,7 @@ class NvidiaSmi {
 
     public updateDrawtype() {
         var drawtype = workspace.getConfiguration('nvidia-smi').drawtype
-        if (drawtype == 'circle') {
-            this.indicator = circChars
-        } else {
-            this.indicator = barChars
-        }
+        this.indicator = drawtypes[drawtype]
     }
 
     public async updateNvidiaSmi() {
