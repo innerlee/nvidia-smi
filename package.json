@@ -3,7 +3,7 @@
     "displayName": "nvidia-smi",
     "description": "Show GPU usage on status bar",
     "icon": "icon.png",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "innerlee",
     "license": "MIT",
     "repository": "https://github.com/innerlee/nvidia-smi",
@@ -25,7 +25,7 @@
                 "nvidia-smi.drawtype": {
                     "type": "string",
                     "default": "circle",
-                    "description": "circle | bar | recycle | die | clock",
+                    "description": "GPU indicator styles",
                     "enum": [
                         "circle",
                         "bar",
@@ -34,7 +34,12 @@
                         "clock",
                         "line",
                         "pile",
-                        "digit"
+                        "digit",
+                        "circledigit",
+                        "negativecircledigit",
+                        "wan",
+                        "tiao",
+                        "bing"
                     ]
                 }
             }

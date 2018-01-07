@@ -8,9 +8,14 @@ const barChars = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
 const recycleChars = ['♺', '♳', '♴', '♵', '♶', '♷', '♸', '♹']
 const dieChars = ['⛶', '⚀', '⚁', '⚂', '⚃', '⚄', '⚅']
 const clockChars = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚']
-const lineChars = [ '⎽', '⎼', '⎻', '⎺']
+const lineChars = ['⎽', '⎼', '⎻', '⎺']
 const pileChars = ['𝄖', '𝄗', '𝄘', '𝄙', '𝄚', '𝄛']
-const digitChars = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+const digitChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+const circledigitChars = ['🄋', '➀', '➁', '➂', '➃', '➄', '➅', '➆', '➇', '➈']
+const negativecircledigitChars = ['🄌', '➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑', '➒']
+const wanChars = ['🀆', '🀈', '🀉', '🀊', '🀋', '🀌', '🀍', '🀎', '🀏']
+const tiaoChars = ['🀆', '🀐', '🀑', '🀒', '🀓', '🀔', '🀕', '🀖', '🀗', '🀘']
+const bingChars = ['🀆', '🀙', '🀚', '🀛', '🀜', '🀝', '🀞', '🀟', '🀠', '🀡']
 const drawtypes = {
     'circle': circleChars,
     'bar': barChars,
@@ -19,7 +24,12 @@ const drawtypes = {
     'clock': clockChars,
     'line': lineChars,
     'pile': pileChars,
-    'digit': digitChars
+    'digit': digitChars,
+    'circledigit': circledigitChars,
+    'negativecircledigit': negativecircledigitChars,
+    'wan': wanChars,
+    'tiao': tiaoChars,
+    'bing': bingChars
 }
 const cmd = `nvidia-smi -q -d UTILIZATIONnvidia-smi -q -d UTILIZATION | grep Gpu | sed 's/[Gpu%: ]//g'`
 

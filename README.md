@@ -14,8 +14,17 @@ Shows the GPU usage at status bar.
 * line `⎽⎼⎻⎺`
 * pile `𝄖𝄗𝄘𝄙𝄚𝄛`
 * digit `0123456789`
+* circledigit `🄋➀➁➂➃➄➅➆➇➈`
+* negativecircledigit `🄌➊➋➌➍➎➏➐➑➒`
+* wan `🀆🀈🀉🀊🀋🀌🀍🀎🀏`
+* tiao `🀆🀐🀑🀒🀓🀔🀕🀖🀗🀘`
+* bing `🀆🀙🀚🀛🀜🀝🀞🀟🀠🀡`
 
 ## Release Notes
+
+### 0.0.4
+
+- Support circledigit, negativecircledigit, wan, tiao, bing style.
 
 ### 0.0.3
 
