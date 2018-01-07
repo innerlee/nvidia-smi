@@ -122,7 +122,7 @@ class NvidiaSmi {
 
         // Create as needed
         if (!this._statusBarItem) {
-            this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left)
+            this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left, 1)
             this._statusBarItem.show()
         }
 
