@@ -31,7 +31,7 @@ const drawtypes = {
     'tiao': tiaoChars,
     'bing': bingChars
 }
-const cmd = `nvidia-smi -q -d UTILIZATIONnvidia-smi -q -d UTILIZATION | grep Gpu | sed 's/[Gpu%: ]//g'`
+const cmd = `nvidia-smi -q -d UTILIZATION | grep Gpu | sed 's/[Gpu%: ]//g'`
 
 // This method is called when your extension is activated. Activation is
 // controlled by the activation events defined in package.json.
@@ -44,7 +44,7 @@ export async function activate(context: ExtensionContext) {
     // create a new word counter
     let nvidiasmi = new NvidiaSmi(0)
     try {
-        var res = await exec(cmd)
+        var res = await exec(cmd, {timeout: 666})
         var nCard = res.stdout.split('\n').filter((val) => val).length
         if (nCard > 0) {
             nvidiasmi.nCard = nCard
@@ -127,7 +127,7 @@ class NvidiaSmi {
         }
 
         try {
-            var res = await exec(cmd)
+            var res = await exec(cmd, {timeout: 666})
             var levels = res.stdout.split('\n').filter((val) => val)
             var chars = this.indicator
             var nlevel = chars.length - 1

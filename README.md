@@ -22,6 +22,10 @@ Shows the GPU usage at status bar.
 
 ## Release Notes
 
+### 0.0.7
+
+- Timeout cmd.
+
 ### 0.0.6
 
 - Keep position steady.
