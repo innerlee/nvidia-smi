@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "nvidia-smi" extension will be documented in this file.
 
+### 0.0.8
+
+- Better timeout.
+
 ### 0.0.7
 
 - Timeout cmd.
