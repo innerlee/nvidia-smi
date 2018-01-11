@@ -44,7 +44,7 @@ export async function activate(context: ExtensionContext) {
     // create a new word counter
     let nvidiasmi = new NvidiaSmi(0)
     try {
-        var res = await exec(cmd, {timeout: 666})
+        var res = await exec(cmd, {timeout: 999})
         var nCard = res.stdout.split('\n').filter((val) => val).length
         if (nCard > 0) {
             nvidiasmi.nCard = nCard
@@ -127,7 +127,7 @@ class NvidiaSmi {
         }
 
         try {
-            var res = await exec(cmd, {timeout: 666})
+            var res = await exec(cmd, {timeout: 999})
             var levels = res.stdout.split('\n').filter((val) => val)
             var chars = this.indicator
             var nlevel = chars.length - 1
@@ -135,7 +135,6 @@ class NvidiaSmi {
 
         } catch (e) {
             console.log(e)
-            this._nCard = 0
         }
 
         // Update the status bar
