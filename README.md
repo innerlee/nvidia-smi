@@ -2,7 +2,7 @@
 
 Shows the GPU usage at status bar.
 
-![nvidia-smi GPU stats shown](images/nvidia-smi.png)
+![nvidia-smi GPU stats shown](images/nvidia-smi.gif)
 
 ## Styles
 
@@ -21,6 +21,10 @@ Shows the GPU usage at status bar.
 * bing `🀆🀙🀚🀛🀜🀝🀞🀟🀠🀡`
 
 ## Release Notes
+
+### 0.0.9
+
+- Update README.
 
 ### 0.0.8
 
