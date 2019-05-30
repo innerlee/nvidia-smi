@@ -3,7 +3,7 @@
     "displayName": "nvidia-smi",
     "description": "Show GPU usage on status bar",
     "icon": "icon.png",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "innerlee",
     "license": "MIT",
     "repository": "https://github.com/innerlee/nvidia-smi",
@@ -70,9 +70,9 @@
         "child-process-promise": "^2.2.1"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.34"
     }
 }
