@@ -13,9 +13,9 @@
   integrity sha1-xCE38PL2RYvwyJjWX0jF9gCRFHU=
 
 agent-base@4, agent-base@^4.1.0:
-  version "4.2.1"
-  resolved "http://r.cnpmjs.org/agent-base/download/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
-  integrity sha1-2J5ZmfeXh1Z0wH2H8mD8Qeg+jKk=
+  version "4.3.0"
+  resolved "http://r.cnpmjs.org/agent-base/download/agent-base-4.3.0.tgz#8165f01c436009bccad0b1d122f05ed770efc6ee"
+  integrity sha1-gWXwHENgCbzK0LHRIvBe13Dvxu4=
   dependencies:
     es6-promisify "^5.0.0"
 
@@ -170,9 +170,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 es6-promise@^4.0.3:
-  version "4.2.6"
-  resolved "http://r.cnpmjs.org/es6-promise/download/es6-promise-4.2.6.tgz#b685edd8258886365ea62b57d30de28fadcd974f"
-  integrity sha1-toXt2CWIhjZepitX0w3ij63Nl08=
+  version "4.2.8"
+  resolved "http://r.cnpmjs.org/es6-promise/download/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
+  integrity sha1-TrIVlMlyvEBVPSduUQU5FD21Pgo=
 
 es6-promisify@^5.0.0:
   version "5.0.0"
@@ -323,9 +323,9 @@ inflight@^1.0.4:
     wrappy "1"
 
 inherits@2:
-  version "2.0.3"
-  resolved "http://r.cnpmjs.org/inherits/download/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
-  integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
+  version "2.0.4"
+  resolved "http://r.cnpmjs.org/inherits/download/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
+  integrity sha1-D6LGT5MpF8NDOg3tVTY6rjdBa3w=
 
 is-typedarray@~1.0.0:
   version "1.0.0"
@@ -433,9 +433,9 @@ ms@2.0.0:
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
 ms@^2.1.1:
-  version "2.1.1"
-  resolved "http://r.cnpmjs.org/ms/download/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
-  integrity sha1-MKWGTrPrsKZvLr5tcnrwagnYbgo=
+  version "2.1.2"
+  resolved "http://r.cnpmjs.org/ms/download/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
 node-version@^1.0.0:
   version "1.2.0"
@@ -475,9 +475,9 @@ pseudomap@^1.0.2:
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
 psl@^1.1.24:
-  version "1.1.32"
-  resolved "http://r.cnpmjs.org/psl/download/psl-1.1.32.tgz#3f132717cf2f9c169724b2b6caf373cf694198db"
-  integrity sha1-PxMnF88vnBaXJLK2yvNzz2lBmNs=
+  version "1.1.33"
+  resolved "http://r.cnpmjs.org/psl/download/psl-1.1.33.tgz#5533d9384ca7aab86425198e10e8053ebfeab661"
+  integrity sha1-VTPZOEynqrhkJRmOEOgFPr/qtmE=
 
 punycode@^1.4.1:
   version "1.4.1"
@@ -635,9 +635,9 @@ verror@1.10.0:
     extsprintf "^1.2.0"
 
 vscode-test@^0.4.1:
-  version "0.4.2"
-  resolved "http://r.cnpmjs.org/vscode-test/download/vscode-test-0.4.2.tgz#1f4a8582db423cb64456aa1f577d9156a1db1299"
-  integrity sha1-H0qFgttCPLZEVqofV32RVqHbEpk=
+  version "0.4.3"
+  resolved "http://r.cnpmjs.org/vscode-test/download/vscode-test-0.4.3.tgz#461ebf25fc4bc93d77d982aed556658a2e2b90b8"
+  integrity sha1-Rh6/JfxLyT132YKu1VZlii4rkLg=
   dependencies:
     http-proxy-agent "^2.1.0"
     https-proxy-agent "^2.2.1"
